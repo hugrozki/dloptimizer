@@ -31,8 +31,8 @@ def optimize(path = '.', directory = 'optimizado'):
 
       print('Imagen optimizada en %s' % fpath)
 
-    elif entry.is_dir() and entry.name != directory:
-      # item is a folder run recursive optimize function
+    elif entry.is_dir() and entry.name != directory and not entry.name.startswith('.'):
+      # item is a folder but not hidden folder (like .git) run recursive optimize function
       # create folder in 'optimizado'
 
       print('Directorio %s' % entry.name)
